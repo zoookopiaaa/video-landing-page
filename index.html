@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Watch Video Before Redirect</title>
+</head>
+<body style="text-align:center; margin-top:50px;">
+  <h2>Watch this video before you go to Lazada!</h2>
+  <video id="myVideo" width="640" height="360" controls autoplay>
+    <source src="YOUR_VIDEO_URL.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <p>Redirecting you shortly...</p>
+
+  <script>
+    const redirectUrl = "YOUR_LAZADA_LINK"; // Put your Lazada product link here
+
+    const video = document.getElementById('myVideo');
+    video.onended = function() {
+      window.location.href = redirectUrl;
+    };
+  </script>
+</body>
+</html>
