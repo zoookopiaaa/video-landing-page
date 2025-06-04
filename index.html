@@ -1,35 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Watch Before Shopping</title>
+  <title>Watch Then Shop</title>
 </head>
-<body style="text-align:center; margin-top:50px;">
-  <h2>Watch this short video before going to Lazada!</h2>
+<body style="text-align:center; margin-top:50px; background-color:#000; color:#fff;">
+  <h2>Enjoy the video </h2>
 
-  <!-- Vimeo Embed -->
+  <!-- Eporner Embed -->
   <iframe 
-    id="vimeoPlayer"
-    src="https://player.vimeo.com/video/1090675349?autoplay=1" 
-    width="640" 
-    height="564" 
+    id="epornerVideo"
+    src="https://www.eporner.com/embed/bUgU1WWa2ey/" 
+    width="1280" 
+    height="720" 
     frameborder="0" 
-    allow="autoplay; fullscreen" 
     allowfullscreen>
   </iframe>
 
-  <p>Redirecting you to Lazada after the video ends...</p>
+  <p>^^, <a href="https://shrinkme.ink/Hj8W24MN" style="color:yellow;">^^</a>.</p>
 
-  <!-- Vimeo Player API -->
-  <script src="https://player.vimeo.com/api/player.js"></script>
+  <!-- Fallback redirect after a set time -->
   <script>
-    const redirectUrl = "https://shrinkme.ink/Hj8W24MN";
-    const iframe = document.getElementById('vimeoPlayer');
-    const player = new Vimeo.Player(iframe);
-
-    // Redirect after video ends
-    player.on('ended', function() {
-      window.location.href = redirectUrl;
-    });
+    // Set to redirect after ~40 seconds (adjust this to match your video duration)
+    setTimeout(function() {
+      window.location.href = "https://shrinkme.ink/Hj8W24MN";
+    }, 40000); // 40 seconds = 40000 milliseconds
   </script>
 </body>
 </html>
