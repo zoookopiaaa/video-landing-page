@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Watch Video Before Redirect</title>
+  <title>Watch Before Shopping</title>
 </head>
 <body style="text-align:center; margin-top:50px;">
-  <h2>Watch this video before you go to Lazada!</h2>
-  <video id="myVideo" width="640" height="360" controls autoplay>
-    <source src="YOUR_VIDEO_URL.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <p>Redirecting you shortly...</p>
+  <h2>Watch this short video before going to Lazada!</h2>
 
+  <!-- Vimeo Embed -->
+  <iframe 
+    id="vimeoPlayer"
+    src="https://player.vimeo.com/video/1090675349?autoplay=1" 
+    width="640" 
+    height="564" 
+    frameborder="0" 
+    allow="autoplay; fullscreen" 
+    allowfullscreen>
+  </iframe>
+
+  <p>Redirecting you to Lazada after the video ends...</p>
+
+  <!-- Vimeo Player API -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
   <script>
-    const redirectUrl = "YOUR_LAZADA_LINK"; // Put your Lazada product link here
+    const redirectUrl = "https://shrinkme.ink/Hj8W24MN";
+    const iframe = document.getElementById('vimeoPlayer');
+    const player = new Vimeo.Player(iframe);
 
-    const video = document.getElementById('myVideo');
-    video.onended = function() {
+    // Redirect after video ends
+    player.on('ended', function() {
       window.location.href = redirectUrl;
-    };
+    });
   </script>
 </body>
 </html>
